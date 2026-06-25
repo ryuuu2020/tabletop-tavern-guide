@@ -120,28 +120,8 @@ const recommendedPath = [
 
 export default function GuidesPage() {
   return (
-    <>
-      {/* Header */}
-      <header className="border-b border-border-subtle bg-abyss-light/50 backdrop-blur-sm sticky top-0 z-10">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-sm font-mono text-text-secondary hover:text-tactical-blue transition-colors"
-          >
-            <span className="text-tactical-blue">←</span> BACK_TO_BASE
-          </Link>
-          <div className="flex items-center gap-3">
-            <span className="font-display font-bold text-lg text-text-primary tracking-tight">
-              TABLETOP TAVERN
-            </span>
-            <span className="tag tag-info">STRATEGY_GUIDES</span>
-          </div>
-        </div>
-      </header>
-
-      {/* Main */}
-      <main className="flex-1 bg-tactical-grid">
-        <div className="max-w-5xl mx-auto px-6 py-12">
+    <div className="p-4 lg:p-6">
+      <div className="max-w-5xl mx-auto">
           {/* Title Section */}
           <section className="mb-12">
             <div className="flex items-center gap-3 mb-3">
@@ -333,36 +313,6 @@ export default function GuidesPage() {
             </div>
           </section>
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border-subtle bg-abyss-light">
-        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="font-display font-bold text-text-primary tracking-tight">
-              TABLETOP TAVERN GUIDE
-            </span>
-            <span className="tag">v1.0</span>
-          </div>
-          <div className="flex items-center gap-6 text-sm text-text-secondary">
-            <Link href="/beginners-guide" className="hover:text-tactical-blue transition-colors">
-              Beginner's Guide
-            </Link>
-            <Link href="/factions" className="hover:text-tactical-blue transition-colors">
-              Factions
-            </Link>
-            <Link href="/campaign" className="hover:text-tactical-blue transition-colors">
-              Campaign
-            </Link>
-            <Link href="/faq" className="hover:text-tactical-blue transition-colors">
-              FAQ
-            </Link>
-          </div>
-          <div className="font-mono text-xs text-text-muted">
-            © 2026 · UNOFFICIAL FAN SITE
-          </div>
-        </div>
-      </footer>
-    </>
+      </div>
   );
 }

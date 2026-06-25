@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
 import { useEffect } from "react";
 
 export default function CombatGuidePage() {
@@ -10,24 +8,8 @@ export default function CombatGuidePage() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-abyss text-text-primary font-body">
-      {/* Header */}
-      <header className="border-b border-border-subtle bg-abyss-light">
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-tactical-blue transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            <span>Back</span>
-          </Link>
-          <span className="ml-4 text-sm text-text-muted font-mono">COMBAT_GUIDE_v1.0</span>
-        </div>
-      </header>
-
-      {/* Main */}
-      <main className="flex-1 bg-tactical-grid">
-        <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="p-4 lg:p-6">
+      <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-3">
             Tabletop Tavern Combat Guide — Positioning, Counters & Formations
           </h1>
@@ -169,26 +151,10 @@ export default function CombatGuidePage() {
             </div>
           </section>
 
-          <p className="text-xs text-text-muted font-mono mt-8">
+          <p className="text-xs text-text-muted font-mono text-center mt-8">
             数据标注：文中数值为社区玩家估算，实际以游戏内为准。Tabletop Tavern 于 2026 年 6 月 11 日发售。
           </p>
         </div>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border-subtle bg-abyss-light py-6">
-        <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-text-muted">
-          <span>© 2026 Tabletop Tavern Guide. 独立粉丝站，非官方。</span>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-tactical-blue transition-colors">
-              Privacy
-            </Link>
-            <Link href="/terms" className="hover:text-tactical-blue transition-colors">
-              Terms
-            </Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+      </div>
   );
 }

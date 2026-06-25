@@ -1,28 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-
 /* ============================================
    Template A: Tactical Command Center
    Builds Page — Tabletop Tavern Best Builds
+   Page content only — chrome in layout.tsx
    ============================================ */
-
-const NAV_ITEMS = [
-  { label: 'Home', href: '/' },
-  { label: 'Faction Tier List', href: '/tier-list' },
-  { label: 'Best Builds', href: '/builds', active: true },
-  { label: 'Strategy Guides', href: '/guides' },
-  { label: 'Unit Database', href: '/database' },
-  { label: 'Campaign Map', href: '/campaign' },
-  { label: 'FAQ', href: '/faq' },
-];
-
-const STATS = [
-  { label: 'BUILDS', value: '3', unit: '' },
-  { label: 'PATCH', value: '1.0.2', unit: '' },
-  { label: 'FACTIONS', value: '5', unit: '' },
-  { label: 'LAST UPDATE', value: '2026-06-25', unit: '' },
-];
 
 /* ============================================
    FAQ Snippets — structured data friendly
@@ -246,131 +228,21 @@ function getDifficultyTag(difficulty: string) {
 }
 
 export default function BuildsPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
-    <div className="flex min-h-screen">
-      {/* SEO: Page title metadata is set via document.title since we use 'use client'.
-          For SSR metadata, a separate metadata export would be used, but 'use client'
-          pages cannot export metadata directly. The layout.tsx provides base SEO. */}
-      <title>Tabletop Tavern Builds — Best Faction Builds &amp; Strategy Guide (Patch 1.0.2)</title>
-      <meta
-        name="description"
-        content="Best Tabletop Tavern builds for Patch 1.0.2: Vikings Rush (58% WR), Orcs Siege (55% WR), Elves Precision (52% WR). Core units, key items, strengths & weaknesses, and comparison table."
-      />
+    <div className="p-4 lg:p-6">
+      <div className="max-w-6xl mx-auto space-y-6">
 
-      {/* ===== Mobile menu overlay ===== */}
-      {sidebarOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-black/60 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
-
-      {/* ===== Sidebar ===== */}
-      <aside
-        className={`
-          fixed top-0 left-0 z-50 h-full w-56 bg-[#0a0e13] border-r border-border-subtle
-          transform transition-transform duration-200
-          lg:translate-x-0 lg:static lg:z-auto
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-        `}
-      >
-        {/* Logo */}
-        <div className="flex items-center gap-3 px-4 h-14 border-b border-border-subtle">
-          <div className="w-7 h-7 bg-tactical-blue flex items-center justify-center">
-            <span className="text-[10px] font-mono font-bold text-abyss">CMD</span>
-          </div>
-          <span className="font-display text-sm font-semibold tracking-tight text-text-primary">
-            TTG
-          </span>
-        </div>
-
-        {/* Navigation */}
-        <nav className="py-4 flex flex-col gap-0.5">
-          {NAV_ITEMS.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className={`sidebar-link ${item.active ? 'active' : ''}`}
-            >
-              <span className="w-1.5 h-1.5 bg-current opacity-40" />
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        {/* Bottom section */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-border-subtle">
-          <p className="text-[11px] font-mono text-text-muted">
-            Tabletop Tavern Guide
+        {/* ===== Page Header ===== */}
+        <section>
+          <h1 className="font-display text-2xl font-bold tracking-tight text-text-primary">
+            Best Builds
+          </h1>
+          <p className="text-sm text-text-secondary mt-1 max-w-2xl">
+            Community-tested faction builds for Tabletop Tavern. Each build
+            includes core unit composition, key item priorities, and matchup analysis.
+            Win rates are community estimated based on Discord reports and replay data.
           </p>
-          <p className="text-[10px] font-mono text-text-muted mt-0.5">
-            v1.0.0
-          </p>
-        </div>
-      </aside>
-
-      {/* ===== Main content ===== */}
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* ===== Top Stats Bar ===== */}
-        <header className="h-14 border-b border-border-subtle bg-abyss flex items-center px-4 lg:px-6 gap-4 lg:gap-8">
-          {/* Mobile hamburger */}
-          <button
-            className="lg:hidden flex flex-col gap-1 p-1"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className="block w-4 h-px bg-text-secondary" />
-            <span className="block w-4 h-px bg-text-secondary" />
-            <span className="block w-4 h-px bg-text-secondary" />
-          </button>
-
-          {/* Back link */}
-          <a
-            href="/"
-            className="text-xs font-mono text-text-muted hover:text-text-secondary transition-colors flex items-center gap-1"
-          >
-            <span>&larr;</span> HOME
-          </a>
-
-          {/* Stats */}
-          {STATS.map((stat) => (
-            <div key={stat.label} className="flex items-baseline gap-1.5">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-text-muted">
-                {stat.label}
-              </span>
-              <span className="font-mono text-sm font-semibold text-text-primary tabular-nums">
-                {stat.value}
-              </span>
-            </div>
-          ))}
-
-          {/* Spacer */}
-          <div className="flex-1" />
-
-          {/* Status indicator */}
-          <div className="hidden sm:flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-terminal-green animate-pulse-subtle" />
-            <span className="text-[11px] font-mono text-text-muted">ONLINE</span>
-          </div>
-        </header>
-
-        {/* ===== Content area with grid bg ===== */}
-        <main className="flex-1 bg-tactical-grid p-4 lg:p-6">
-          <div className="max-w-6xl mx-auto space-y-6">
-
-            {/* ===== Page Header ===== */}
-            <section>
-              <h1 className="font-display text-2xl font-bold tracking-tight text-text-primary">
-                Best Builds
-              </h1>
-              <p className="text-sm text-text-secondary mt-1 max-w-2xl">
-                Community-tested faction builds for Tabletop Tavern Patch 1.0.2. Each build
-                includes core unit composition, key item priorities, and matchup analysis.
-                Win rates are community estimated based on Discord reports and replay data.
-              </p>
-            </section>
+        </section>
 
             {/* ===== FAQ Snippets (Top of page for SEO) ===== */}
             <section>
@@ -685,41 +557,7 @@ export default function BuildsPage() {
             </div>
 
           </div>
-        </main>
 
-        {/* ===== Footer ===== */}
-        <footer className="border-t border-border-subtle bg-abyss">
-          <div className="max-w-6xl mx-auto px-4 lg:px-6 py-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-4 text-[11px] font-mono text-text-muted">
-                <span>&copy; {new Date().getFullYear()} Tabletop Tavern Guide</span>
-                <a href="/privacy" className="hover:text-text-secondary transition-colors">
-                  Privacy
-                </a>
-                <a href="/terms" className="hover:text-text-secondary transition-colors">
-                  Terms
-                </a>
-                <a href="/" className="hover:text-text-secondary transition-colors">
-                  Home
-                </a>
-                <a href="/builds" className="text-tactical-blue hover:text-tactical-blue-dim transition-colors">
-                  Builds
-                </a>
-              </div>
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://afdian.com/a/gameguidehub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] font-mono text-tactical-blue hover:text-tactical-blue-dim transition-colors"
-                >
-                  SUPPORT ON AFDIAN
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
-    </div>
   );
 }
