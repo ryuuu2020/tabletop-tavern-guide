@@ -1,121 +1,220 @@
-# Template A: Tactical Command Center
+# Design System: Figma
 
-## Design Overview
-A data-dense, Linear-inspired strategy game guide site. Designed for strategy RPGs, turn-based tactics, and MOBA tier lists. Precision over decoration. Sharp corners, grid backgrounds, terminal accents.
+## 1. Visual Theme & Atmosphere
 
-## Design Read
-- **Kind**: Strategy game guide with tactical dashboard
-- **Audience**: Competitive players who want data fast
-- **Vibe**: Linear-style precision + cockpit density
-- **Dials**: VARIANCE=5 / MOTION=3 / DENSITY=8
+Figma's interface is the design tool that designed itself — a masterclass in typographic sophistication where a custom variable font (figmaSans) modulates between razor-thin (weight 320) and bold (weight 700) with stops at unusual intermediates (330, 340, 450, 480, 540) that most type systems never explore. This granular weight control gives every text element a precisely calibrated visual weight, creating hierarchy through micro-differences rather than the blunt instrument of "regular vs bold."
 
-## Color System
-| Token | Hex | Usage |
-|---|---|---|
-| `abyss` | `#0d1117` | Page background |
-| `abyss-light` | `#161b22` | Card / table surface |
-| `tactical-blue` | `#58a6ff` | Primary accent, links |
-| `warning-orange` | `#db6d28` | Warnings, S-tier indicators |
-| `terminal-green` | `#3fb950` | Success, online status |
-| `terminal-red` | `#f85149` | Negative numbers, danger |
-| `text-primary` | `#e6edf3` | Body text |
-| `text-secondary` | `#8b949e` | Secondary text |
-| `text-muted` | `#484f58` | Muted labels |
-| `border-subtle` | `#30363d` | Borders |
+The page presents a fascinating duality: the interface chrome is strictly black-and-white (literally only `#000000` and `#ffffff` detected as colors), while the hero section and product showcases explode with vibrant multi-color gradients — electric greens, bright yellows, deep purples, hot pinks. This separation means the design system itself is colorless, treating the product's colorful output as the hero content. Figma's marketing page is essentially a white gallery wall displaying colorful art.
 
-## Typography
-- **Display/Heading**: Space Grotesk (600-700 weight)
-- **Body**: Inter (400)
-- **Data/Mono**: JetBrains Mono (500-600 for numbers)
+What makes Figma distinctive beyond the variable font is its circle-and-pill geometry. Buttons use 50px radius (pill) or 50% (perfect circle for icon buttons), creating an organic, tool-palette-like feel. The dashed-outline focus indicator (`dashed 2px`) is a deliberate design choice that echoes selection handles in the Figma editor itself — the website's UI language references the product's UI language.
 
-Typography scale uses `font-display` / `font-body` / `font-mono` CSS variables.
+**Key Characteristics:**
+- Custom variable font (figmaSans) with unusual weight stops: 320, 330, 340, 450, 480, 540, 700
+- Strictly black-and-white interface chrome — color exists only in product content
+- figmaMono for uppercase technical labels with wide letter-spacing
+- Pill (50px) and circular (50%) button geometry
+- Dashed focus outlines echoing Figma's editor selection handles
+- Vibrant multi-color hero gradients (green, yellow, purple, pink)
+- OpenType `"kern"` feature enabled globally
+- Negative letter-spacing throughout — even body text at -0.14px to -0.26px
 
-## Layout Structure
-```
-[Sidebar 240px fixed] [Header: Stats Bar (h-14)]
-                       [Main Content (scrollable, grid bg)]
-                       [Footer]
-```
+## 2. Color Palette & Roles
 
-- Sidebar: Fixed left, collapses to hamburger menu on mobile (`< lg` breakpoint)
-- Stats Bar: 4 metrics in a row, status indicator on right
-- Main content: 32px grid background pattern, max-width 6xl (72rem)
-- All corners: `rounded-none` or `rounded-sm` (2px)
-- No shadows beyond `border` hairline
+### Primary
+- **Pure Black** (`#000000`): All text, all solid buttons, all borders. The sole "color" of the interface.
+- **Pure White** (`#ffffff`): All backgrounds, white buttons, text on dark surfaces. The other half of the binary.
 
-## Key Components
-- `.stat-card` - Compact data card, border only
-- `.data-row` - Table row with hover highlight
-- `.sidebar-link` - Left border accent on active
-- `.tag` / `.tag-warn` / `.tag-info` / `.tag-success` - Status badges
-- `.terminal-block` - Console-style code block
-- `.cursor-blink` - Animated terminal cursor
-- `.section-divider` - Hairline section break
+*Note: Figma's marketing site uses ONLY these two colors for its interface layer. All vibrant colors appear exclusively in product screenshots, hero gradients, and embedded content.*
 
-## How to Use This Template
+### Surface & Background
+- **Pure White** (`#ffffff`): Primary page background and card surfaces.
+- **Glass Black** (`rgba(0, 0, 0, 0.08)`): Subtle dark overlay for secondary circular buttons and glass effects.
+- **Glass White** (`rgba(255, 255, 255, 0.16)`): Frosted glass overlay for buttons on dark/colored surfaces.
 
-### 1. Install and Build
-```bash
-cd templates/A-tactical
-npm install
-npm run dev       # Development
-npm run export    # Static export to out/ (same as build with output:'export')
-```
+### Gradient System
+- **Hero Gradient**: A vibrant multi-stop gradient using electric green, bright yellow, deep purple, and hot pink. This gradient is the visual signature of the hero section — it represents the creative possibilities of the tool.
+- **Product Section Gradients**: Individual product areas (Design, Dev Mode, Prototyping) may use distinct color themes in their showcases.
 
-### 2. Replace Placeholders
-Search for `REPLACE_WITH_` across all files and replace with your content:
+## 3. Typography Rules
 
-| Placeholder Pattern | What to insert |
-|---|---|
-| `REPLACE_WITH_SITE_NAME` | Full site name (e.g. "Fire Emblem Tactics") |
-| `REPLACE_WITH_SITE_NAME_SHORT` | Short name for sidebar (e.g. "FET") |
-| `REPLACE_WITH_SITE_SLUG` | URL slug in package.json |
-| `REPLACE_WITH_SITE_DESCRIPTION` | Meta description |
-| `REPLACE_WITH_SITE_URL` | Production URL |
-| `REPLACE_WITH_GSC_VERIFICATION_CODE` | Google Search Console verification code |
-| `REPLACE_WITH_NAV_*` | Navigation label text |
-| `REPLACE_WITH_STAT_*` | Stats bar numbers |
-| `REPLACE_WITH_CHAR_*` | Tier list character data |
-| `REPLACE_WITH_SECTION_*` | Section titles and subtitles |
-| `REPLACE_WITH_CARD_*` | Stat card labels and values |
-| `REPLACE_WITH_DATE_*` / `REPLACE_WITH_UPDATE_*` | Recent update entries |
-| `REPLACE_WITH_VERSION` | Site version number |
-| `REPLACE_WITH_PATCH` | Game patch number |
-| `REPLACE_WITH_UPDATE_FREQ` | Data update frequency |
+### Font Family
+- **Primary**: `figmaSans`, with fallbacks: `figmaSans Fallback, SF Pro Display, system-ui, helvetica`
+- **Monospace / Labels**: `figmaMono`, with fallbacks: `figmaMono Fallback, SF Mono, menlo`
 
-### 3. GA4 and GSC
-- GA4 Measurement ID: `G-ET6778V62K` (pre-configured)
-- GSC verification: Replace `REPLACE_WITH_GSC_VERIFICATION_CODE` with your actual code
-- GSC HTML file: `google4cd6cdf221ea7b0b.html` (place in `public/` directory)
+### Hierarchy
 
-### 4. Afdian Footer
-The "SUPPORT ON AFDIAN" link points to `https://afdian.com/a/gameguidehub`. Update if you have a different page.
+| Role | Font | Size | Weight | Line Height | Letter Spacing | Notes |
+|------|------|------|--------|-------------|----------------|-------|
+| Display / Hero | figmaSans | 86px (5.38rem) | 400 | 1.00 (tight) | -1.72px | Maximum impact, extreme tracking |
+| Section Heading | figmaSans | 64px (4rem) | 400 | 1.10 (tight) | -0.96px | Feature section titles |
+| Sub-heading | figmaSans | 26px (1.63rem) | 540 | 1.35 | -0.26px | Emphasized section text |
+| Sub-heading Light | figmaSans | 26px (1.63rem) | 340 | 1.35 | -0.26px | Light-weight section text |
+| Feature Title | figmaSans | 24px (1.5rem) | 700 | 1.45 | normal | Bold card headings |
+| Body Large | figmaSans | 20px (1.25rem) | 330–450 | 1.30–1.40 | -0.1px to -0.14px | Descriptions, intros |
+| Body / Button | figmaSans | 16px (1rem) | 330–400 | 1.40–1.45 | -0.14px to normal | Standard body, nav, buttons |
+| Body Light | figmaSans | 18px (1.13rem) | 320 | 1.45 | -0.26px to normal | Light-weight body text |
+| Mono Label | figmaMono | 18px (1.13rem) | 400 | 1.30 (tight) | 0.54px | Uppercase section labels |
+| Mono Small | figmaMono | 12px (0.75rem) | 400 | 1.00 (tight) | 0.6px | Uppercase tiny tags |
 
-### 5. Adding Pages
-Create new routes under `app/`:
-```
-app/
-  tier-list/page.tsx
-  builds/page.tsx
-  guides/page.tsx
-  database/page.tsx
-```
+### Principles
+- **Variable font precision**: figmaSans uses weights that most systems never touch — 320, 330, 340, 450, 480, 540. This creates hierarchy through subtle weight differences rather than dramatic jumps. The difference between 330 and 340 is nearly imperceptible but structurally significant.
+- **Light as the base**: Most body text uses 320–340 (lighter than typical 400 "regular"), creating an ethereal, airy reading experience that matches the design-tool aesthetic.
+- **Kern everywhere**: Every text element enables OpenType `"kern"` feature — kerning is not optional, it's structural.
+- **Negative tracking by default**: Even body text uses -0.1px to -0.26px letter-spacing, creating universally tight text. Display text compresses further to -0.96px and -1.72px.
+- **Mono for structure**: figmaMono in uppercase with positive letter-spacing (0.54px–0.6px) creates technical signpost labels.
 
-Use the same layout - the RootLayout wraps everything automatically.
+## 4. Component Stylings
 
-### 6. Customization Tips
-- **Change accent color**: Edit `tactical-blue` in `tailwind.config.ts` and `globals.css`
-- **Add more stats**: Edit the `STATS` array in `page.tsx`
-- **Modify tier list**: Edit `TIER_DATA` array
-- **Change grid size**: Edit `background-size` in `globals.css` (default: 32px)
+### Buttons
 
-## Anti-AI Design Decisions
-- No gradient hero sections
-- No bento grids
-- No purple (the LLM default)
-- No Inter as heading font (Space Grotesk instead)
-- No rounded corners except 2px
-- No centered layouts
-- No card shadows (borders only)
-- Asymmetric sidebar + content layout breaks the centered-grid pattern
-- Terminal aesthetic replaces generic "modern" look
+**Black Solid (Pill)**
+- Background: Pure Black (`#000000`)
+- Text: Pure White (`#ffffff`)
+- Radius: circle (50%) for icon buttons
+- Focus: dashed 2px outline
+- Maximum emphasis
+
+**White Pill**
+- Background: Pure White (`#ffffff`)
+- Text: Pure Black (`#000000`)
+- Padding: 8px 18px 10px (asymmetric vertical)
+- Radius: pill (50px)
+- Focus: dashed 2px outline
+- Standard CTA on dark/colored surfaces
+
+**Glass Dark**
+- Background: `rgba(0, 0, 0, 0.08)` (subtle dark overlay)
+- Text: Pure Black
+- Radius: circle (50%)
+- Focus: dashed 2px outline
+- Secondary action on light surfaces
+
+**Glass Light**
+- Background: `rgba(255, 255, 255, 0.16)` (frosted glass)
+- Text: Pure White
+- Radius: circle (50%)
+- Focus: dashed 2px outline
+- Secondary action on dark/colored surfaces
+
+### Cards & Containers
+- Background: Pure White
+- Border: none or minimal
+- Radius: 6px (small containers), 8px (images, cards, dialogs)
+- Shadow: subtle to medium elevation effects
+- Product screenshots as card content
+
+### Navigation
+- Clean horizontal nav on white
+- Logo: Figma wordmark in black
+- Product tabs: pill-shaped (50px) tab navigation
+- Links: black text, underline 1px decoration
+- CTA: Black pill button
+- Hover: text color via CSS variable
+
+### Distinctive Components
+
+**Product Tab Bar**
+- Horizontal pill-shaped tabs (50px radius)
+- Each tab represents a Figma product area (Design, Dev Mode, Prototyping, etc.)
+- Active tab highlighted
+
+**Hero Gradient Section**
+- Full-width vibrant multi-color gradient background
+- White text overlay with 86px display heading
+- Product screenshots floating within the gradient
+
+**Dashed Focus Indicators**
+- All interactive elements use `dashed 2px` outline on focus
+- References the selection handles in the Figma editor
+- A meta-design choice connecting website and product
+
+## 5. Layout Principles
+
+### Spacing System
+- Base unit: 8px
+- Scale: 1px, 2px, 4px, 4.5px, 8px, 10px, 12px, 16px, 18px, 24px, 32px, 40px, 46px, 48px, 50px
+
+### Grid & Container
+- Max container width: up to 1920px
+- Hero: full-width gradient with centered content
+- Product sections: alternating showcases
+- Footer: dark full-width section
+- Responsive from 559px to 1920px
+
+### Whitespace Philosophy
+- **Gallery-like pacing**: Generous spacing lets each product section breathe as its own exhibit.
+- **Color sections as visual breathing**: The gradient hero and product showcases provide chromatic relief between the monochrome interface sections.
+
+### Border Radius Scale
+- Minimal (2px): Small link elements
+- Subtle (6px): Small containers, dividers
+- Comfortable (8px): Cards, images, dialogs
+- Pill (50px): Tab buttons, CTAs
+- Circle (50%): Icon buttons, circular elements
+
+## 6. Depth & Elevation
+
+| Level | Treatment | Use |
+|-------|-----------|-----|
+| Flat (Level 0) | No shadow | Page background, most text |
+| Surface (Level 1) | White card on gradient/dark section | Cards, product showcases |
+| Elevated (Level 2) | Subtle shadow | Floating cards, hover states |
+
+**Shadow Philosophy**: Figma uses shadows sparingly. The primary depth mechanisms are **background contrast** (white content on colorful/dark sections) and the inherent dimensionality of the product screenshots themselves.
+
+## 7. Do's and Don'ts
+
+### Do
+- Use figmaSans with precise variable weights (320–540) — the granular weight control IS the design
+- Keep the interface strictly black-and-white — color comes from product content only
+- Use pill (50px) and circular (50%) geometry for all interactive elements
+- Apply dashed 2px focus outlines — the signature accessibility pattern
+- Enable `"kern"` feature on all text
+- Use figmaMono in uppercase with positive letter-spacing for labels
+- Apply negative letter-spacing throughout (-0.1px to -1.72px)
+
+### Don't
+- Don't add interface colors — the monochrome palette is absolute
+- Don't use standard font weights (400, 500, 600, 700) — use the variable font's unique stops (320, 330, 340, 450, 480, 540)
+- Don't use sharp corners on buttons — pill and circular geometry only
+- Don't use solid focus outlines — dashed is the signature
+- Don't increase body font weight above 450 — the light-weight aesthetic is core
+- Don't use positive letter-spacing on body text — it's always negative
+
+## 8. Responsive Behavior
+
+### Breakpoints
+| Name | Width | Key Changes |
+|------|-------|-------------|
+| Small Mobile | <560px | Compact layout, stacked |
+| Tablet | 560–768px | Minor adjustments |
+| Small Desktop | 768–960px | 2-column layouts |
+| Desktop | 960–1280px | Standard layout |
+| Large Desktop | 1280–1440px | Expanded |
+| Ultra-wide | 1440–1920px | Maximum width |
+
+### Collapsing Strategy
+- Hero text: 86px → 64px → 48px
+- Product tabs: horizontal scroll on mobile
+- Feature sections: stacked single column
+- Footer: multi-column → stacked
+
+## 9. Agent Prompt Guide
+
+### Quick Color Reference
+- Everything: "Pure Black (#000000)" and "Pure White (#ffffff)"
+- Glass Dark: "rgba(0, 0, 0, 0.08)"
+- Glass Light: "rgba(255, 255, 255, 0.16)"
+
+### Example Component Prompts
+- "Create a hero on a vibrant multi-color gradient (green, yellow, purple, pink). Headline at 86px figmaSans weight 400, line-height 1.0, letter-spacing -1.72px. White text. White pill CTA button (50px radius, 8px 18px padding)."
+- "Design a product tab bar with pill-shaped buttons (50px radius). Active: Black bg, white text. Inactive: transparent, black text. figmaSans at 20px weight 480."
+- "Build a section label: figmaMono 18px, uppercase, letter-spacing 0.54px, black text. Kern enabled."
+- "Create body text at 20px figmaSans weight 330, line-height 1.40, letter-spacing -0.14px. Pure Black on white."
+
+### Iteration Guide
+1. Use variable font weight stops precisely: 320, 330, 340, 450, 480, 540, 700
+2. Interface is always black + white — never add colors to chrome
+3. Dashed focus outlines, not solid
+4. Letter-spacing is always negative on body, always positive on mono labels
+5. Pill (50px) for buttons/tabs, circle (50%) for icon buttons
