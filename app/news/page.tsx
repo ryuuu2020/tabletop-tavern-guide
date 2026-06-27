@@ -1,6 +1,11 @@
 export default function NewsPage() {
   const news = [
     {
+      date: '2026-06-27',
+      title: 'Tabletop Tavern v1.6.23 — Battle Mechanics Overhaul and New Unit Stats',
+      summary: "Tabletop Tavern patch v1.6.23 landed on June 24 with a meaningful battle mechanics update. Units now properly arrange in rows based on battlefield position, eliminating the frustrating behavior where miniatures cross over each other during combat. Game speed can now be adjusted via hotkeys (fully remappable), and double-clicking a unit selects all units of the same type. The Deathhaven Fiends received a stat rework: Backstabber and Outrider abilities with 32 attack, 32 defense, 28 weapon strength, and 45 speed. A new tutorial panel explains the battlefield mechanics changes. Bug fixes address a speed-pause issue when settings menu is open and a model attachment bug on Serandael of Nytheria.",
+    },
+    {
       date: '2026-06-11',
       title: 'Tabletop Tavern Released on Steam',
       summary: 'Tabletop Tavern launched on Steam by developer TJ (Frostbloom / Gamirror Games). The game is a roguelike RTS where you build an army from scratch and command them across a brutal campaign. Features 5 factions, 25 Steam achievements, and procedurally generated campaigns.',
