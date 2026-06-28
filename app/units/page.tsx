@@ -16,6 +16,12 @@ const FACTION_UNITS = [
   { faction: 'Humans', units: 'Knights, Pikemen, Archers — balanced roster with no extreme strengths or weaknesses' },
   { faction: 'Dwarves', units: 'Ironbreakers (Defensive Tank), Artillery — resilient units with strong defensive capabilities' },
 ];
+export const metadata = {
+  title: "Tabletop Tavern Tabletop Tavern Unit Guide — Complete Guide (2026)",
+  description:
+    "Complete unit database for all five factions. Learn the counter triangle (Pikemen &gt; Cavalry &gt; Archers &gt; Heavy Infantry &gt; Pikemen) and each faction&apos;s unique unit roster.",
+};
+
 
 export default function UnitsPage() {
   useEffect(() => {

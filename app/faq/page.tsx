@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Tabletop Tavern Frequently Asked Questions — Complete Guide (2026)",
+  description:
+    "{faq.a}",
+};
+
 export default function FaqPage() {
   const faqs = [
     { q: 'Is Tabletop Tavern a roguelike?', a: 'Yes. Tabletop Tavern is a roguelike RTS where each campaign run is procedurally generated with random encounters, map layouts, and item drops. Every run is unique.' },

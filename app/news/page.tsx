@@ -1,3 +1,9 @@
+export const metadata = {
+  title: "Tabletop Tavern News & Updates — Complete Guide (2026)",
+  description:
+    "Latest news and updates about Tabletop Tavern. For official announcements, visit the Steam store page.",
+};
+
 export default function NewsPage() {
   const news = [
     {

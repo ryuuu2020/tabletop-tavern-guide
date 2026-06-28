@@ -14,6 +14,12 @@ const ITEMS_DATA = [
   { name: 'Windrider Cloak', rarity: 'Epic', type: 'Armor', effect: 'Windriders gain invisibility for 4s after leaving combat', faction: 'Elves' },
   { name: 'Druid\'s Grove Seed', rarity: 'Rare', type: 'Consumable', effect: 'Druid abilities have 30% reduced cooldown', faction: 'Elves' },
 ];
+export const metadata = {
+  title: "Tabletop Tavern Tabletop Tavern Items Guide — Complete Guide (2026)",
+  description:
+    "Key items and equipment for all five factions. Combine faction-specific relics with universal gear to create powerful synergies for your campaign runs.",
+};
+
 
 export default function ItemsGuidePage() {
   useEffect(() => {
