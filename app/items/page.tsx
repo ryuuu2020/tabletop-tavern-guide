@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-
 const ITEMS_DATA = [
   { name: 'Berserker\'s Mead Horn', rarity: 'Legendary', type: 'Consumable', effect: 'All Berserkers gain +20% attack damage for 10 seconds', faction: 'Vikings' },
   { name: 'Frost Rune Amulet', rarity: 'Epic', type: 'Accessory', effect: 'Runecaster spells apply 30% slow for 3 seconds', faction: 'Vikings' },
@@ -15,17 +11,13 @@ const ITEMS_DATA = [
   { name: 'Druid\'s Grove Seed', rarity: 'Rare', type: 'Consumable', effect: 'Druid abilities have 30% reduced cooldown', faction: 'Elves' },
 ];
 export const metadata = {
-  title: "Tabletop Tavern Tabletop Tavern Items Guide — Complete Guide (2026)",
+  title: "Tabletop Tavern Items Guide — Complete Guide (2026)",
   description:
     "Key items and equipment for all five factions. Combine faction-specific relics with universal gear to create powerful synergies for your campaign runs.",
 };
 
 
 export default function ItemsGuidePage() {
-  useEffect(() => {
-    document.title = "Tabletop Tavern Items Guide — Best Gear, Economy Items & Synergies";
-  }, []);
-
   return (
     <div className="p-4 lg:p-6">
       <div className="max-w-6xl mx-auto">

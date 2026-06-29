@@ -1,24 +1,15 @@
-"use client";
-
-import { useEffect } from "react";
 export const metadata = {
-  title: "Tabletop Tavern Tabletop Tavern Beginner&apos;s Guide — First Campaign Walkthrough — Complete Guide (2026)",
-  description:
-    "从零开始掌握这款 Roguelike RTS 的核心节奏。本文基于社区玩家估算数据，覆盖前三场战斗、派系首
-            选、经济管理以及常见新手失误，帮你用最小试错成本建立优势。",
+  title: "Tabletop Tavern Beginner's Guide — First Campaign Walkthrough — Complete Guide (2026)",
+  description: "从零开始掌握这款 Roguelike RTS 的核心节奏。本文基于社区玩家估算数据，覆盖前三场战斗、派系首选、经济管理以及常见新手失误，帮你用最小试错成本建立优势。",
 };
 
 
 export default function BeginnersGuidePage() {
-  useEffect(() => {
-    document.title = "Tabletop Tavern Beginner's Guide — First Campaign Walkthrough";
-  }, []);
-
   return (
     <div className="p-4 lg:p-6">
       <div className="max-w-6xl mx-auto">
           <h1 className="text-3xl md:text-4xl font-display font-bold text-text-primary mb-3">
-            Tabletop Tavern Beginner&apos;s Guide — First Campaign Walkthrough
+            Tabletop Tavern Beginner's Guide — First Campaign Walkthrough
           </h1>
           <p className="text-text-secondary text-lg mb-8 max-w-3xl">
             从零开始掌握这款 Roguelike RTS 的核心节奏。本文基于社区玩家估算数据，覆盖前三场战斗、派系首

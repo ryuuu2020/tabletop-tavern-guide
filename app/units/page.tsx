@@ -1,7 +1,3 @@
-"use client";
-
-import { useEffect } from "react";
-
 const UNIT_TYPES = [
   { type: 'Pikemen', role: 'Anti-Cavalry', strongVs: 'Cavalry', weakVs: 'Heavy Infantry', faction: 'All' },
   { type: 'Cavalry', role: 'Flanking / Anti-Ranged', strongVs: 'Archers', weakVs: 'Pikemen', faction: 'All' },
@@ -17,17 +13,13 @@ const FACTION_UNITS = [
   { faction: 'Dwarves', units: 'Ironbreakers (Defensive Tank), Artillery — resilient units with strong defensive capabilities' },
 ];
 export const metadata = {
-  title: "Tabletop Tavern Tabletop Tavern Unit Guide — Complete Guide (2026)",
+  title: "Tabletop Tavern Unit Guide — Complete Guide (2026)",
   description:
     "Complete unit database for all five factions. Learn the counter triangle (Pikemen &gt; Cavalry &gt; Archers &gt; Heavy Infantry &gt; Pikemen) and each faction&apos;s unique unit roster.",
 };
 
 
 export default function UnitsPage() {
-  useEffect(() => {
-    document.title = "Tabletop Tavern Unit Guide — Stats, Counters & Faction Rosters";
-  }, []);
-
   return (
     <div className="p-4 lg:p-6">
       <div className="max-w-6xl mx-auto">

@@ -1,19 +1,11 @@
-"use client";
 
-import { useEffect } from "react";
 export const metadata = {
-  title: "Tabletop Tavern Tabletop Tavern Combat Guide — Positioning, Counters & Formations — Complete Guide (2026)",
-  description:
-    "战斗是 Tabletop Tavern 的核心体验。本文从阵型、兵种克制、地形和时机四个维度拆解实战技巧，所有数据
-            均为社区估算，适用于普通战役和无尽模式。",
+  title: "Tabletop Tavern Combat Guide — Positioning, Counters & Formations (2026)",
+  description: "Combat guide for Tabletop Tavern. Formation tips, unit counters, terrain tactics, and timing strategies for campaign and endless modes.",
 };
 
 
 export default function CombatGuidePage() {
-  useEffect(() => {
-    document.title = "Tabletop Tavern Combat Guide — Positioning, Counters & Formations";
-  }, []);
-
   return (
     <div className="p-4 lg:p-6">
       <div className="max-w-6xl mx-auto">

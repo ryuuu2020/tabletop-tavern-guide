@@ -227,10 +227,7 @@ function getDifficultyTag(difficulty: string) {
 }
 export const metadata = {
   title: "Tabletop Tavern Best Builds — Complete Guide (2026)",
-  description:
-    "Community-tested faction builds for Tabletop Tavern. Each build
-            includes core unit composition, key item priorities, and matchup analysis.
-            Win rates are community estimated bas...",
+  description: "Community-tested faction builds for Tabletop Tavern. Each build includes core unit composition, key item priorities, and matchup analysis.",
 };
 
 
