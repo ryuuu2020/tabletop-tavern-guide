@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tabletop-tavern-guide.vercel.app/sitemap.xml
