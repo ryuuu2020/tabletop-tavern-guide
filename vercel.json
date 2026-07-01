@@ -5,5 +5,19 @@
       "source": "/google4cd6cdf221ea7b0b.html",
       "destination": "/google4cd6cdf221ea7b0b"
     }
-  ]
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "tabletop-tavern-guide.vercel.app"
+        }
+      ],
+      "destination": "https://tabletoptavern.gguidehub.com/$1",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true
 }

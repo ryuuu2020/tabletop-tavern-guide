@@ -2,11 +2,13 @@ import type { Metadata } from 'next';
 import SidebarLayout from './components/SidebarLayout';
 import './globals.css';
 import Script from "next/script";
+import SchemaMarkup from '@/shared/SchemaMarkup';
+
 
 export const metadata: Metadata = {
   title: 'Tabletop Tavern Guide - Best Factions, Builds & Strategy',
   description: 'The ultimate Tabletop Tavern guide with faction tier lists, unit counters, campaign strategies, item synergies and achievement tracking. Master the roguelike RTS.',
-  metadataBase: new URL('https://tabletop-tavern-guide.vercel.app'),
+  metadataBase: new URL("https://tabletoptavern.gguidehub.com"),
   openGraph: {
     title: 'Tabletop Tavern Guide',
     description: 'The ultimate Tabletop Tavern guide with faction tier lists, unit counters, campaign strategies, item synergies and achievement tracking. Master the roguelike RTS.',
